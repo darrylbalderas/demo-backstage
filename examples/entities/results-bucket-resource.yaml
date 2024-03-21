@@ -1,0 +1,9 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: results-db
+  description: Store results db
+spec:
+  type: bucket
+  owner: team-a
+  system: data-processor

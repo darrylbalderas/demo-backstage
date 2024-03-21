@@ -1,5 +1,9 @@
 #!/bin/bash
 
+# Terraform
+
+terraform fmt -recursive
+
 # Backstage
 
 yarn fix
