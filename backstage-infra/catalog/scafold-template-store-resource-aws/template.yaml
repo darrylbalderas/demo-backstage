@@ -24,6 +24,11 @@ spec:
           title: Description
           type: string
           description: Resource Description
+        bucket:
+          title: S3 Bucket
+          type: string
+          description: S3 bucket location to upload results
+          default: demo-backstage-us-west-2-03192024
         team:
           type: string
           # Use `SelectFieldFromApi` to configure the select field for the entry.
@@ -65,12 +70,21 @@ spec:
       action: fetch:template
       input:
         url: ./content
+        targetPath: ./output
         values:
           name: ${{ parameters.name }}
           description: ${{ parameters.description }}
           resource_type: ${{ parameters.resource_type }}
           team: ${{ parameters.team }}
           system: ${{ parameters.system }}
+
+    - id: uploadToS3
+      name: Upload to S3
+      action: roadiehq:aws:s3:cp
+      input:
+        region: us-west-2
+        bucket: ${{ parameters.bucket }}
+        path: ./output
 
   # some outputs which are saved along with the job for use in the frontend
   output:
