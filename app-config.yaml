@@ -119,11 +119,6 @@ catalog:
         - allow: [User, Group]
 
     - type: file
-      target: ../../examples/simple-template/template.yaml
-      rules:
-        - allow: [Template]
-
-    - type: file
       target: ../../backstage-infra/catalog/scaffold-template-dynamic-field/template.yaml
       rules:
         - allow: [Template]
