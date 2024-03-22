@@ -1,0 +1,9 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: ${{ values.name  }}
+  description: ${{ values.description  }}
+spec:
+  type: ${{ values.resource_type  }}
+  owner: ${{ values.team  }}
+  system: ${{ values.system  }}

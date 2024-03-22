@@ -1,0 +1,80 @@
+# Notice the v1beta3 version
+apiVersion: scaffolder.backstage.io/v1beta3
+kind: Template
+# some metadata about the template itself
+metadata:
+  name: store-resource-in-aws
+  title: Store resource in AWS
+  description: Store resource in AWS
+spec:
+  owner: backstage/techdocs-core
+  type: service
+  # these are the steps which are rendered in the frontend with the form input
+  parameters:
+    - title: Demo Store resource in AWS
+      properties:
+        name:
+          title: Name
+          type: string
+          description: Unique name of the resource
+          ui:autofocus: true
+          ui:options:
+            rows: 5
+        description:
+          title: Description
+          type: string
+          description: Resource Description
+        team:
+          type: string
+          # Use `SelectFieldFromApi` to configure the select field for the entry.
+          ui:field: SelectFieldFromApi
+          ui:options:
+            title: Teams
+            description: ""
+            # The Path on the Backstage API and the parameters to fetch the data for the dropdown
+            path: 'proxy/resources/teams'
+            placeholder: 'Select from options'
+            arraySelector: 'teams'
+        resource_type:
+          type: string
+          # Use `SelectFieldFromApi` to configure the select field for the entry.
+          ui:field: SelectFieldFromApi
+          ui:options:
+            title: ResourceType
+            description: ""
+            # The Path on the Backstage API and the parameters to fetch the data for the dropdown
+            path: 'proxy/resources/resource-types'
+            placeholder: 'Select from options'
+            arraySelector: 'resource-types'
+        system:
+          type: string
+          # Use `SelectFieldFromApi` to configure the select field for the entry.
+          ui:field: SelectFieldFromApi
+          ui:options:
+            title: Systems
+            description: ""
+            # The Path on the Backstage API and the parameters to fetch the data for the dropdown
+            path: 'proxy/resources/systems'
+            placeholder: 'Select from options'
+            arraySelector: 'systems'
+
+  # here's the steps that are executed in series in the scaffolder backend
+  steps:
+    - id: fetch-base
+      name: Fetch Base
+      action: fetch:template
+      input:
+        url: ./content
+        values:
+          name: ${{ parameters.name }}
+          description: ${{ parameters.description }}
+          resource_type: ${{ parameters.resource_type }}
+          team: ${{ parameters.team }}
+          system: ${{ parameters.system }}
+
+  # some outputs which are saved along with the job for use in the frontend
+  output:
+    text:
+      - title: More information
+        content: |
+          Hello!
