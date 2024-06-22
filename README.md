@@ -14,3 +14,4 @@ yarn dev
 
 - Create an s3 bucket using terraform https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/s3_bucket
 - Understanding backstage entity concepts https://backstage.io/docs/features/software-catalog/system-model
+- Understand backstage kinds https://backstage.io/docs/features/software-catalog/descriptor-format
