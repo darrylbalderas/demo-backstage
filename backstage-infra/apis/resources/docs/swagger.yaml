@@ -1,0 +1,137 @@
+definitions:
+  main.APIFrameworksResponse:
+    properties:
+      api_frameworks:
+        items:
+          type: string
+        type: array
+    type: object
+  main.GroupsResponse:
+    properties:
+      groups:
+        items:
+          type: string
+        type: array
+    type: object
+  main.ResourceTypesResponse:
+    properties:
+      resource_types:
+        items:
+          type: string
+        type: array
+    type: object
+  main.SystemsResponse:
+    properties:
+      systems:
+        items:
+          type: string
+        type: array
+    type: object
+  main.TeamsResponse:
+    properties:
+      teams:
+        items:
+          type: string
+        type: array
+    type: object
+  main.UsersResponse:
+    properties:
+      users:
+        items:
+          type: string
+        type: array
+    type: object
+info:
+  contact: {}
+paths:
+  /api-frameworks:
+    get:
+      consumes:
+      - application/json
+      description: Get ApiFrameworks
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/main.APIFrameworksResponse'
+      summary: Get ApiFrameworks
+      tags:
+      - accounts
+  /groups:
+    get:
+      consumes:
+      - application/json
+      description: GetGroups
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/main.GroupsResponse'
+      summary: GetGroups
+      tags:
+      - accounts
+  /resource-types:
+    get:
+      consumes:
+      - application/json
+      description: GetResourceTypes
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/main.ResourceTypesResponse'
+      summary: GetResourceTypes
+      tags:
+      - accounts
+  /systems:
+    get:
+      consumes:
+      - application/json
+      description: GetSystems
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/main.SystemsResponse'
+      summary: GetSystems
+      tags:
+      - accounts
+  /teams:
+    get:
+      consumes:
+      - application/json
+      description: GetTeams
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/main.TeamsResponse'
+      summary: GetTeams
+      tags:
+      - accounts
+  /users:
+    get:
+      consumes:
+      - application/json
+      description: GetUsers
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/main.UsersResponse'
+      summary: GetUsers
+      tags:
+      - accounts
+swagger: "2.0"
