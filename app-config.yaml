@@ -85,11 +85,12 @@ scaffolder:
   # see https://backstage.io/docs/features/software-templates/configuration for software template options
 
 catalog:
+  orphanStrategy: delete
   providers:
     awsS3:
       # uses "default" as provider ID
       bucketName: ${AWS_S3_BUCKET_NAME}
-      prefix: org/ # optional
+      prefix: self-managed/org/ # optional
       region: us-west-2 # optional, uses the default region otherwise
       schedule: # same options as in TaskScheduleDefinition
         # supports cron, ISO duration, "human duration" as used in code
