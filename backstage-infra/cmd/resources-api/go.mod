@@ -1,4 +1,4 @@
-module github.com/darrylbalderas/demo-backstage/backstage-infra/apis/resources
+module github.com/darrylbalderas/demo-backstage/backstage-infra/cmd/resources-api
 
 go 1.20
 
