@@ -88,7 +88,7 @@ catalog:
   providers:
     awsS3:
       # uses "default" as provider ID
-      bucketName: "demo-backstage-us-west-2-03192024"
+      bucketName: ${AWS_S3_BUCKET_NAME}
       prefix: org/ # optional
       region: us-west-2 # optional, uses the default region otherwise
       schedule: # same options as in TaskScheduleDefinition

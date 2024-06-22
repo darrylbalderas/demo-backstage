@@ -1,6 +1,6 @@
 lint:
 	pre-commit run --all-files -v
-run:
+run: start_db
 	yarn dev
 start_db:
 	docker-compose up -d
